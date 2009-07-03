@@ -44,7 +44,8 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
   \code{\link[tpr]{tpr}} for further details.
 }
 \value{
-  \code{cpfpo} returns an object of class \code{cpfpo} and {tpr}. See
+  \code{cpfpo} returns an object of class \code{cpfpo} and
+  \code{\link[tpr]{tpr}}. See
   \code{link[tpr]{tpr}} for further details.
 }
 \references{
