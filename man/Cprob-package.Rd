@@ -75,5 +75,5 @@ fit.cpfpo <- cpfpo(Hist(time, ev)~factor(A) + creat,
                    data = mgus, tis=seq(10, 30, 0.3),
                    w=rep(1,67))
 ## and plot the odds-ratios
-plot(fit.cpfpo, layout = c(1, 3))
+xyplot(fit.cpfpo, scales = list(relation = "free"), layout = c(3, 1))
 }
