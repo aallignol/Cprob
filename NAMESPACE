@@ -1,4 +1,4 @@
-import(prodlim, tpr)
+import(prodlim, tpr, lattice)
 export(cpf, cpfpo, summary.cpf)
 S3method(print, cpf)
 S3method(summary, cpf)

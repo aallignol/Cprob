@@ -62,7 +62,7 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
   defined in the \pkg{tpr} package are available.
 }
 \seealso{\code{\link[tpr]{tpr}}, \code{\link{print.cpfpo}},
-  \code{\link{plot.cpfpo}}}
+  \code{\link{xyplot.cpfpo}}}
 \examples{
 data(mgus)
 mgus$A <- ifelse(mgus$age < 64, 0, 1)
