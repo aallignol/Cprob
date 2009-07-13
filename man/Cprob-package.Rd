@@ -11,7 +11,7 @@ Estimates the conditional probability function of a competing event, and fit, us
 \details{
 \tabular{ll}{
 Package: \tab Cprob\cr
-Version: \tab 0.7-0\cr
+Version: \tab 0.8\cr
 Depends: \tab prodlim, tpr\cr
 License: \tab GPL >= 2\cr
 Packaged: \tab Thu Oct 23 18:27:30 2008; arthur\cr
@@ -29,7 +29,7 @@ cpfpo                   Proportional-odds Model for the Conditional
 mgus                    Monoclonal Gammopathy of Undetermined
                         Significance
 plot.cpf                Plot pethod for cpf objects
-plot.cpfpo              Plot Method for a cpfpo Object
+xyplot.cpfpo            xyplot Method for a cpfpo Object
 predict.cpf             Conditional Probability Estimates at chosen
                         timepoints
 print.cpf               Print method for a cpf object
