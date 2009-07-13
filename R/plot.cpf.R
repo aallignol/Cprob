@@ -38,7 +38,7 @@ plot.cpf <- function(x, conf.int = FALSE, mark.time = TRUE,
         }
             else {
                 lines(x$time[who == levels[i]], x$lower[who == levels[i]],
-                      type = "s", lty = lty[i], col = col[i])
+                      type = "s", lty = 3, col = col[i])
                 lines(x$time[who == levels[i]], x$upper[who == levels[i]],
                       type = "s", lty = 3, col = col[i])
             }
