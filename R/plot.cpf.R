@@ -1,5 +1,5 @@
 plot.cpf <- function(x, conf.int = FALSE, mark.time = TRUE,
-                     mark = 3, col = 1, lty, xlim, ylim = c(0, 1),
+                     mark = 3, col = 1, lty, ci.lty = 3, xlim, ylim = c(0, 1),
                      xlab = "", ylab = "", bty = "n", legend = TRUE,
                      curvlab = NULL, legend.pos = NULL, legend.bty = "n",
                      ...) {
@@ -30,18 +30,10 @@ plot.cpf <- function(x, conf.int = FALSE, mark.time = TRUE,
         lines(x$time[who == levels[i]], x$cp[who == levels[i]], type = "s",
               col = col[i], lty = lty[i], ...)
         if (conf.int) {
-            if (length(levels) == 1) {
             lines(x$time[who == levels[i]], x$lower[who == levels[i]],
-                  type = "s", lty = 3, col = col[i])
+                  type = "s", lty = ci.lty, col = col[i])
             lines(x$time[who == levels[i]], x$upper[who == levels[i]],
-                  type = "s", lty = 3, col = col[i])
-        }
-            else {
-                lines(x$time[who == levels[i]], x$lower[who == levels[i]],
-                      type = "s", lty = 3, col = col[i])
-                lines(x$time[who == levels[i]], x$upper[who == levels[i]],
-                      type = "s", lty = 3, col = col[i])
-            }
+                  type = "s", lty = ci.lty, col = col[i])
         }
         if (mark.time) {
             points(x$time[x$n.event[, 2] != 0][who == levels[i]],
