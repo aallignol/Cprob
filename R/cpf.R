@@ -61,21 +61,6 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
     level <- 1 - conf.int
     upper <- cp + qnorm(1 - level/2) * sqrt(var.cp)
     lower <- cp - qnorm(1 - level/2) * sqrt(var.cp)
-    #if (length(fit$size.strata) == 1) {
-    #    zzz <- list(cp = cp, var = var.cp, time = fit$time, lower = lower, 
-    #                upper = upper, n.risk = fit$n.risk,
-    #                n.event = n.event, n.lost = fit$n.lost, size.strata = fit$size.strata,
-    #                X = fit$X, call = call, z = NULL, p = NULL, failcode = failcode)
-    #    class(zzz) <- "cpf"
-    #    return(zzz)
-    #}
-    #    zzz <- list(cp = cp, var = var.cp, time = fit$time, lower = lower,
-    #                upper = upper, n.risk = fit$n.risk,
-    #                n.event = n.event, n.lost = fit$n.lost, size.strata = fit$size.strata,
-    #                X = fit$X, call = call, z = NULL, p = NULL, failcode = failcode)
-    #    class(zzz) <- "cpf"
-    #    return(zzz)
-    #}
     if (length(fit$size.strata) == 2) {
         max.times <- min(fit$time[cumsum(fit$size.strata)])
         times <- sort(unique(fit$time[fit$time <= max.times]))
@@ -150,4 +135,37 @@ intt <- function(weight, surv, fOther, times) {
         sum((weight[i:lt] * surv[i:lt]) / (1 - fOther[i:lt])^2, na.rm = TRUE)
      })
     res
+}
+
+
+### Extract method for cpf objects
+"[.cpf" <- function(x, ..., drop = FALSE) {
+    if (missing(..1)) i <- NULL else i <- sort(..1)
+    if (!is.null(i) & max(i) > dim(x$X)[1]) {
+        warning(paste("'cpf' object has only", length(x$size.strata), "conditional probability curves", sep = " "))
+    }
+    if (!is.null(x$X)) {
+        if (is.null(i)) keep <- rep(TRUE, length(x$time))
+        else {
+            lstrat <- rep(1:dim(x$X)[1], x$size.strata)
+            ind <- lstrat %in% i
+            if (length(i) <= 1) {
+                x$X <- NULL
+                x$z <- x$p <- NULL
+            }
+            else {
+                x$X <- x$X[i, , drop = drop]
+            }
+            x$cp <- x$cp[ind]
+            x$var <- x$var[ind]
+            x$time <- x$time[ind]
+            x$lower <- x$lower[ind]
+            x$upper <- x$upper[ind]
+            x$n.risk <- x$n.risk[ind]
+            x$n.event <- x$n.event[ind, , drop = drop]
+            x$n.lost <- x$n.lost[ind]
+            x$size.strata <- x$size.strata[i]
+        }
+    }
+    x
 }
