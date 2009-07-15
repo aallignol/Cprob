@@ -15,7 +15,7 @@ summary.pseudocpf <- function(object, conf.int = 0.95, scale = 1, ...) {
     else {
         tmp <- cbind(beta, exp(beta), se.beta.ajs, beta / se.beta.ajs,
                      1 - pchisq((beta/ se.beta.ajs)^2, 1))
-    }x
+    }
     dimnames(tmp) <- list(names(beta), c("coef", "exp(coef)", "se(coef)",
                                          "w", "Pr(>|w|)"))
     zzz$coefficients <- tmp
