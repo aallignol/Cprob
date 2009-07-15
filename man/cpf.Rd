@@ -1,5 +1,6 @@
 \name{cpf}
 \alias{cpf}
+\alias{[.cpf}}
 \title{Conditional Probability Function of a Competing Event}
 \description{
   This function computes estimates of the conditional probability
