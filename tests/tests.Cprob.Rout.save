@@ -151,3 +151,12 @@ creat        0.2566941 0.79741492
 age          0.04224328 1.04314823 0.01965401  2.6020242 9.267531e-03
 creat        0.19314357 1.21305693 0.75242697 -0.3539132 7.234039e-01
 > 
+> ### test 4
+> time <- c(rep(2, 20), rep(3, 60), rep(4, 20))
+> ev <- c(rep(1, 20), rep(2, 60), rep(0, 20))
+> data <- data.frame(time, ev)
+> 
+> a <- predict(cpf(Hist(time, ev) ~ 1, data), 3)$cp
+> all.equal(a, 1/2)
+[1] TRUE
+> 
