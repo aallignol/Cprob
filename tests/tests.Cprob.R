@@ -33,6 +33,8 @@ a <- predict(cpf(Hist(time, ev) ~ 1, data), 3)$cp
 all.equal(a, 1/2)
 
 ### test 5
+fit <- pseudocpf(Hist(time, ev) ~ age + creat, mgus, id = id, timep = cutoffs,
+                 corstr = "independence", scale.value = TRUE)
 
 fit <- pseudocpf(Hist(time, ev) ~ age + creat, mgus, id = id, timep = cutoffs,
                  corstr = "independence", scale.value = TRUE, jack = TRUE)
