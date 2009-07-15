@@ -7,8 +7,8 @@
   displayed  
 }
 \usage{
-\S3method{plot}{cpf}(x, conf.int = FALSE, mark.time = TRUE,
-                     mark = 3, col = 1, lty, xlim, ylim = c(0, 1),
+\S3method{plot}{cpf}(x, conf.int = FALSE, mark.time = TRUE, mark = 3,
+                     col = 1, lty, ci.lty = 3, xlim, ylim = c(0, 1),
                      xlab = "", ylab = "", bty = "n", legend = TRUE, 
                      curvlab = NULL, legend.pos = NULL,
                      legend.bty = "n", ...)
@@ -23,6 +23,8 @@
     same as \code{pch}}
   \item{col}{Vector of colours for the curves}
   \item{lty}{Vector of integers specifying the line types}
+  \item{ci.lty}{A vector of integer controlling the line types for the
+    pointwise confidence intervals}
   \item{xlim}{x-axis limits for the plot area. Default is c(0, 1)}
   \item{ylim}{y-axis limits for the plot area}
   \item{xlab}{X-axis label}
