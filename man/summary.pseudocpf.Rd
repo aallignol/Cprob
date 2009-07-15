@@ -14,7 +14,7 @@
 \arguments{
   \item{object}{An object of class \code{pseudocpf}}
   \item{conf.int}{Level for the two-sided confidence intervals}
-  \item{scale}{	Vector of scale factors for the coefficients, defaults
+  \item{scale}{Vector of scale factors for the coefficients, defaults
     to 1. The confidence limits are for the risk change associated with
     one scale unit}
   \item{\dots}{Other arguments}
@@ -22,13 +22,13 @@
 \value{
   Returns an objet of class \code{summary.pseudocpf} that includes the
   following components:
-  \item{call}{The ùatched call}
+  \item{call}{The matched call}
   \item{coefficients}{A matrix with 5 columns including the regression
     coefficients, odds-ratios, standard-errors, wald statistics and
     corresponding two-sided p-values}
-  \item{A matrix with 4 columns that consists of the odds-ratios,
+  \item{conf.int}{A matrix with 4 columns that consists of the odds-ratios,
     exp(-coef) and the lower and upper bounds of the confidence
-    interval} 
+    interval}
 }
 \author{
   Arthur Allignol, \email{arthur.allignol@fdm.uni-freiburg.de}

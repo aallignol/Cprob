@@ -33,6 +33,8 @@ a <- predict(cpf(Hist(time, ev) ~ 1, data), 3)$cp
 all.equal(a, 1/2)
 
 ### test 5
+cutoffs <- quantile(mgus$time, probs = seq(0, 1, 0.05))[-1]
+
 fit1 <- pseudocpf(Hist(time, ev) ~ age + creat, mgus, id = id, timep = cutoffs,
                  corstr = "independence", scale.value = TRUE)
 
