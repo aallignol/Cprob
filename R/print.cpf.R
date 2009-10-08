@@ -17,5 +17,5 @@ print.cpf <- function(x, ...) {
     Cause <- c(x$failcode, "other", "censored")
     n.event <- c(sum(x$n.event[, 1]), sum(x$n.event[, 2]), sum(x$n.lost))
     print(data.frame(Cause, n.event), row.names = FALSE)
-    invisible(x)
+    invisible()
 }

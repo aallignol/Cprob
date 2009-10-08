@@ -12,8 +12,7 @@ cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
 \arguments{
   \item{formula}{A formula object that has a \code{Hist} object as the
     left of the ~ operator, and if desired, terms separated by + on the
-    right. For a single conditional probability curve, "~1" is not
-    mandatory. Note that any subsetting, ie. \code{data$var} or
+    right. Note that any subsetting, i.e., \code{data$var} or
     \code{data[, "var"]}, is invalid for this function.} 
   \item{data}{A data frame in which the variables in the formula can be
     interpreted.}

@@ -34,9 +34,9 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
   Regression Framework, which is a marginal mean model, where the mean
   of a response \eqn{Y(t)}{Y(t)} at time \eqn{t}{t} is specified
   conditionally on a vector of covariates \eqn{Z}{Z} and a
-  time-dependent stratification factor \eqn{R(t)}{R(t)}
-  \deqn{E\{Y(t) | Z(t), R(t) = 1\} = g^{-1}\{\beta(t)'Z\}}{%
-    E{Y(t) | Z(t), R(t) = 1} = g^(-1){beta(t)'Z}}
+  time-dependent stratification factor \eqn{S(t)}{S(t)}
+  \deqn{E\{Y(t) | Z(t), S(t) = 1\} = g^{-1}\{\beta(t)'Z\}}{%
+    E{Y(t) | Z(t), S(t) = 1} = g^(-1){beta(t)'Z}}
   This approach enables the application of standard binary regression
   models in continuous time.
 
@@ -46,7 +46,7 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
 \value{
   \code{cpfpo} returns an object of class \code{cpfpo} and
   \code{\link[tpr]{tpr}}. See
-  \code{link[tpr]{tpr}} for further details.
+  \code{\link[tpr]{tpr}} for further details.
 }
 \references{
   J.P. Fine, J. Yan and M.R. Kosorok (2004). Temporal Process

@@ -28,7 +28,10 @@ failcode = 1, ...)
     function}
 }
 \details{
-  TO DO
+  The regression model is fitted using a method based on the
+  pseudo-values from a jackknife statistic constructed from the
+  conditional probability curve. Then a GEE model is used on the
+  pseudovalues to obtain the odds-ratios.
 }
 \value{
   Returns an object of class \code{pseudocpf} containing the following
@@ -39,14 +42,21 @@ failcode = 1, ...)
   \item{call}{The matched call}
 }
 \references{
-  TO DO
+  P.K. Andersen, J.P. Klein and S. Rosthoj (2003). Generalised Linear Models
+  for Correlated Pseudo-Observations, with Applications to Multi-State
+  Models. \emph{Biometrika}, 90, 15-27.
+  
+  J.P. Klein and P.K. Andersen (2005). Regression Modeling of Competing Risks
+  Data Based on Pseudovalues of the Cumulative Incidence
+  Function. \emph{Biometrics}, 61, 223-229.
 }
 \author{
   Arthur Allignol, \email{arthur.allignol@fdm.uni-freiburg.de}
 }
 \note{
-  The function returns the pseudo values, therefore, you can fit the
-  model you want, if necessary (to rephrase)
+  Besides the estimated regression coefficients, the function returns
+  the computed pseudo-values, so that one can fit a different model,
+  e.g., with a different link function.
 }
 \seealso{
   \code{\link[geepack]{geese}}, \code{\link{summary.pseudocpf}}

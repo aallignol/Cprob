@@ -53,7 +53,7 @@ col = c(1, 1, 1), ...)
 }
 \value{
   The function returns a \code{trellis} object. See
-  \code{link[lattice]{xyplot}} for further details.
+  \code{\link[lattice]{xyplot}} for further details.
 }
 \author{
  Arthur Allignol, \email{arthur.allignol@fdm.uni-freiburg.de}
