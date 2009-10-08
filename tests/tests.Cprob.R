@@ -40,3 +40,10 @@ fit1 <- pseudocpf(Hist(time, ev) ~ age + creat, mgus, id = id, timep = cutoffs,
 
 fit2 <- pseudocpf(Hist(time, ev) ~ age + creat, mgus, id = id, timep = cutoffs,
                  corstr = "independence", scale.value = TRUE, jack = TRUE)
+
+fit1
+fit2
+
+summary(fit1)
+summary(fit2)
+       
