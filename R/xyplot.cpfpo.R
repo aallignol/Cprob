@@ -23,12 +23,12 @@ xyplot.cpfpo <- function(x, data = NULL, conf.int = TRUE, level = 0.95,
     dat <- do.call(rbind, dat)
     if (conf.int) {
         z <- qnorm(0.975)
-        dat$lower <- with(dat, coef - z * var)
-        dat$upper <- with(dat, coef + z * var)
+        dat$lower <- with(dat, coef - z * sqrt(var))
+        dat$upper <- with(dat, coef + z * sqrt(var))
         if (odds) {
-            with(dat, upper <- exp(upper))
-            with(dat, lower <- exp(lower))
-            with(dat, coef <- exp(coef))
+            dat$upper <- exp(dat$upper)
+            dat$lower <- exp(dat$lower)
+            dat$coef <- exp(dat$coef)
         }
         aa <- xyplot(coef + lower + upper ~ time | cov, dat, type = "s",
                      col = col, lty = lty, xlab = xlab, ylab = ylab, ...)
