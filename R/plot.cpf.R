@@ -33,9 +33,9 @@ plot.cpf <- function(x, conf.int = FALSE, mark.time = FALSE,
               col = col[i], lty = lty[i], ...)
         if (conf.int) {
             lines(x$time[who == levels[i]], x$lower[who == levels[i]],
-                  type = "s", lty = ci.lty, col = col[i])
+                  type = "s", lty = ci.lty, col = col[i], ...)
             lines(x$time[who == levels[i]], x$upper[who == levels[i]],
-                  type = "s", lty = ci.lty, col = col[i])
+                  type = "s", lty = ci.lty, col = col[i], ...)
         }
         if (mark.time) {
             points(x$time[x$n.event[, 2] != 0][who == levels[i]],
