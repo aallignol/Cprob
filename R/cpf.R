@@ -158,37 +158,53 @@ intt <- function(weight, surv, fOther, times) {
 
 
 ### Extract method for cpf objects
-## "[.cpf" <- function(x, ..., drop = FALSE) {
-    
-##     if (missing(..1)) i <- NULL else i <- sort(..1)
-##     if (!is.null(i) & max(i) > dim(x$X)[1]) {
-##         warning(paste("'cpf' object has only", length(x$size.strata), "conditional probability curves", sep = " "))
-##     }
-    
-##     if (!is.null(x$X)) {
-##         if (is.null(i)) keep <- rep(TRUE, length(x$time))
-##         else {
-##             lstrat <- rep(1:dim(x$X)[1], x$size.strata)
-##             ind <- lstrat %in% i
-##             if (length(i) <= 1) {
-##                 x$X <- NULL
-##                 x$z <- x$p <- NULL
-##             }
-##             else {
-##                 x$X <- x$X[i, , drop = drop]
-##             }
-##             x$cp <- x$cp[ind]
-##             x$var <- x$var[ind]
-##             x$time <- x$time[ind]
-##             x$lower <- x$lower[ind]
-##             x$upper <- x$upper[ind]
-##             x$n.risk <- x$n.risk[ind]
-##             x$n.event <- x$n.event[ind, , drop = drop]
-##             x$n.lost <- x$n.lost[ind]
-##             x$size.strata <- x$size.strata[i]
-##         }
-##     }
-##     x
-## }
+"[.cpf" <- function(x, ..., drop = FALSE) {
 
-
+    if (length(x$strata) == 0) {
+        warning("'cpf' has only 1 conditional probability curve")
+        return(x)
+    }
+    
+    if (missing(..1)) i <- NULL else i <- sort(..1)
+    
+    if (is.null(i)) ind <- rep(TRUE, length(x$time))
+    else {
+        if (is.character(i)) {
+            where <- match(i, x$strata)
+            if (any(is.na(where)))
+                stop(paste("subscript(s)",
+                           paste(i[is.na(where)], sep = " "),
+                           "not matched"))
+        }
+        else {
+            where <- i
+            if (max(where) > dim(x$X)[1]) {
+                stop(paste("'cpf' object has only",
+                           length(x$size.strata),
+                           "conditional probability curves", sep = " "))
+            }
+        }
+        
+        lstrat <- rep(1:dim(x$X)[1], x$size.strata)
+        ind <- lstrat %in% where
+        
+        if (length(where) <= 1) {
+            x$X <- NULL
+            x$z <- x$p <- NULL
+        }
+        else {
+            x$X <- x$X[where, , drop = drop]
+        }
+        
+        x$cp <- x$cp[ind]
+        x$var <- x$var[ind]
+        x$time <- x$time[ind]
+        x$lower <- x$lower[ind]
+        x$upper <- x$upper[ind]
+        x$n.risk <- x$n.risk[ind]
+        x$n.event <- x$n.event[ind, , drop = drop]
+        x$n.lost <- x$n.lost[ind]
+        x$size.strata <- x$size.strata[i]
+    }
+    x
+}
