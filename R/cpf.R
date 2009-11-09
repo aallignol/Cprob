@@ -121,7 +121,7 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
         z <- wcp / sqrt(var.wcp)
         pvalue <- 2 * pnorm(-abs(z))
 
-        strata <- paste(colnames(fit$X), rownames(fit$X), sep = "=")
+        strata <- paste(colnames(fit$X), fit$X[, ], sep = "=")
 
         zzz <- list(cp = cp, var = var.cp, time = fit$time, lower = lower,
                     upper = upper, n.risk = fit$n.risk,
@@ -135,7 +135,7 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
             warning("The test is only available for comparing 2 samples")
         }
 
-        strata <- paste(colnames(fit$X), rownames(fit$X), sep = "=")
+        strata <- paste(colnames(fit$X), fit$X[, ], sep = "=")
         
         zzz <- list(cp = cp, var = var.cp, time = fit$time, lower = lower,
                     upper = upper, n.risk = fit$n.risk,
