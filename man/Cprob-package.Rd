@@ -42,13 +42,13 @@ xyplot.cpfpo            'xyplot' method for object of class 'cpfpo'
 }
 
 The \code{cpf} function computes the conditional probability function of
-a competing event and can perform 2 sample tests to compare conditional
-two probaility curves.
+a competing event and can perform 2 sample tests to compare two conditional
+probability curves.
 
 A proportional-odds model for the conditional probability function can
 be fitted either using \code{cpfpo} or \code{pseudocpf}. The former
 function uses the temporal process regression methodology while the
-latter using the pseudo values technique.
+latter uses the pseudo value technique.
 }
 \author{
 Arthur Allignol

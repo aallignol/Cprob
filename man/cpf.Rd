@@ -28,13 +28,13 @@ cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
 }
 \details{
   The conditional probability function is defined as the probability of
-  failing due to one competing event (the event of interest), given that
+  having failed due to one competing event (the event of interest), given that
   no other event has previously occurred (Pepe, 1993).
 
   The \code{cpf} function aims at estimating this quantity along with
   its variance at each event timepoints. It also computes a test of
-  equality of conditional probability curves in two samples (and only in
-  two samples).
+  equality of conditional probability curves in two samples (and
+  \emph{only} in two samples).
 
   Of note, if there is more than 2 competing events, the failure types
   that are not of interest are aggregated into one competing event.
