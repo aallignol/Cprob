@@ -204,7 +204,9 @@ intt <- function(weight, surv, fOther, times) {
         x$n.risk <- x$n.risk[ind]
         x$n.event <- x$n.event[ind, , drop = drop]
         x$n.lost <- x$n.lost[ind]
-        x$size.strata <- x$size.strata[i]
+        x$size.strata <- x$size.strata[where]
+        x$strata <- x$strata[where]
     }
+    
     x
 }
