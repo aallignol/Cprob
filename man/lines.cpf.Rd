@@ -8,7 +8,7 @@
   Lines method for \code{cpf} objects
 }
 \usage{
-\S3method{lines}{cpf}(x, conf.int = FALSE, mark.time = TRUE, mark = 3,
+\S3method{lines}{cpf}(x, conf.int = FALSE, mark.time = FALSE, mark = 3,
       col = 1, lty, ci.lty = 3, ...)
 }
 \arguments{
