@@ -1,8 +1,9 @@
-plot.cpf <- function(x, conf.int = FALSE, mark.time = TRUE,
+plot.cpf <- function(x, conf.int = FALSE, mark.time = FALSE,
                      mark = 3, col = 1, lty, ci.lty = 3, xlim, ylim = c(0, 1),
                      xlab = "", ylab = "", bty = "n", legend = TRUE,
                      curvlab = NULL, legend.pos = NULL, legend.bty = "n",
                      ...) {
+    
     if (!inherits(x, "cpf"))
         stop("'x' must be of class 'cpf'")
     if (missing(xlim))
@@ -19,11 +20,12 @@ plot.cpf <- function(x, conf.int = FALSE, mark.time = TRUE,
     if (length(col) < ns) {
         col <- rep(col[1], ns)
     }
-    ##
+
     size <- c(0, x$size.strata)
     levels <- x$X[, ]
     levels[is.null(levels)] <- 1
     who <- rep(levels, x$size.strata)
+    
     plot(xlim, ylim, type = "n", xlab = xlab, ylab = ylab,
          bty = bty, ...)
     for (i in seq_along(levels)) {
@@ -43,7 +45,7 @@ plot.cpf <- function(x, conf.int = FALSE, mark.time = TRUE,
     }
     if (legend && !is.null(x$X)) {
         if (is.null(curvlab)) {
-            curvlab <- levels
+            curvlab <- x$strata
         }
         if (is.null(legend.pos)) {
             legend.pos <- c(xlim[1] + 0.1, ylim[2] - 0.1)
