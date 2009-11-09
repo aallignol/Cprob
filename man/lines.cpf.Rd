@@ -9,7 +9,7 @@
 }
 \usage{
 \S3method{lines}{cpf}(x, conf.int = FALSE, mark.time = TRUE, mark = 3,
-col = 1, lty, ci.lty = 3, ...)
+      col = 1, lty, ci.lty = 3, ...)
 }
 \arguments{
   \item{x}{An object of class \code{cpf}}

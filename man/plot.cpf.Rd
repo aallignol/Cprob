@@ -7,11 +7,11 @@
   displayed  
 }
 \usage{
-\S3method{plot}{cpf}(x, conf.int = FALSE, mark.time = TRUE, mark = 3,
-         col = 1, lty, ci.lty = 3, xlim, ylim = c(0, 1),
-         xlab = "", ylab = "", bty = "n", legend = TRUE, 
-         curvlab = NULL, legend.pos = NULL,
-         legend.bty = "n", ...)
+\S3method{plot}{cpf}(x, conf.int = FALSE, mark.time = FALSE, mark = 3,
+     col = 1, lty, ci.lty = 3, xlim, ylim = c(0, 1),
+     xlab = "", ylab = "", bty = "n", legend = TRUE, 
+     curvlab = NULL, legend.pos = NULL,
+     legend.bty = "n", ...)
 }
 \arguments{
   \item{x}{An object of class \code{cpf}}
@@ -52,4 +52,4 @@ plot(fit, curvlab = c("Age < 64", "Age >= 64"),
      main = "Conditional Probability of Cancer", xlab = "Years")
 }
 \keyword{hplot}
-
+\keyword{survival}
