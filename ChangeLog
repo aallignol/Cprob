@@ -12,6 +12,7 @@
 
 	* New lines and '[' methods for cpf objects
 
-	* plot.cpfpo replaced by xyplot.cpfpo
+	* xyplot.cpfpo: Replaces plot.cpfpo
 
-	* New functions pseudocpf and associated methods to compute pseudo values
+	* pseudocpf: New function to compute pseudo values. 
+	New methods created (print and summary).
