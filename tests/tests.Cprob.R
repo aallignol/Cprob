@@ -9,6 +9,14 @@ aa
 
 summary(aa)
 
+aa[]
+
+all.equal(aa[]$cp, aa$cp)
+
+all.equal(aa[1]$cp, aa$cp)
+
+aa[c(1, 2)]
+
 ### test 2
 mgus$A <- ifelse(mgus$age < 64, 0, 1)
 
@@ -17,6 +25,11 @@ bb <- cpf(Hist(time, ev) ~ A, mgus)
 bb
 
 summary(bb)
+
+all.equal(bb[]$cp, bb$cp)
+all.equal(bb[c(1, 2)]$cp, bb$cp)
+
+all.equal(bb[1]$cp, bb$cp[1:bb$size.strata[1]])
 
 ### test 3
 fit <- cpfpo(Hist(time, ev) ~ age + creat, mgus,
