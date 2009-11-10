@@ -10,8 +10,8 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
 }
 \arguments{
   \item{formula}{A formula object whose response, on the left of a ~
-    operator, is a \code{Hist} object, and the terms on the right of ~.}
-  \item{data}{A data.frame in which to interpret the variables names in
+    operator, is a \code{Hist} object, and the terms on the right of ~}
+  \item{data}{A data.frame in which to interpret the variable names in
     the formula and subset}
   \item{subset}{Expression specifying that only a subset of the data set
     should be used}
@@ -21,7 +21,7 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
   \item{failcode}{Integer specifying the code for the event of interest}
   \item{tis}{Vector of timepoints on which the model is fitted}
   \item{w}{Vector of weights. Should be of the same length as
-    \code{tis}. Default is \code{rep(1, length(tis))}.}
+    \code{tis}. Default is \code{rep(1, length(tis))}}
   \item{\dots}{Further arguments for \code{\link[tpr]{tpr}}}
 }
 \details{
@@ -35,8 +35,8 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
   of a response \eqn{Y(t)}{Y(t)} at time \eqn{t}{t} is specified
   conditionally on a vector of covariates \eqn{Z}{Z} and a
   time-dependent stratification factor \eqn{S(t)}{S(t)}
-  \deqn{E\{Y(t) | Z(t), S(t) = 1\} = g^{-1}\{\beta(t)'Z\}}{%
-    E{Y(t) | Z(t), S(t) = 1} = g^(-1){beta(t)'Z}}
+  \deqn{E\{Y(t) | Z, S(t) = 1\} = g^{-1}\{\beta(t)'Z\}}{%
+    E{Y(t) | Z, S(t) = 1} = g^(-1){beta(t)'Z}}
   This approach enables the application of standard binary regression
   models in continuous time.
 

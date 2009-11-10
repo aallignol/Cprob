@@ -42,7 +42,7 @@ xyplot.cpfpo            'xyplot' method for object of class 'cpfpo'
 
 The \code{cpf} function computes the conditional probability function of
 a competing event and can test equality of (only) two conditional
-probability curves
+probability curves.
 
 A proportional-odds model for the conditional probability function can
 be fitted using either \code{cpfpo} or \code{pseudocpf}. The former

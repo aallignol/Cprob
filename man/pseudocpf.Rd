@@ -10,7 +10,7 @@
 }
 \usage{
 pseudocpf(formula, data, id, subset, na.action, timepoints,
-failcode = 1, ...)
+          failcode = 1, ...)
 }
 \arguments{
   \item{formula}{A formula object, whose terms are on the right of a ~

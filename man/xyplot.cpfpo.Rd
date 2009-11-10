@@ -42,7 +42,8 @@
     Label for the x-axis
 }
   \item{lty}{
-    Vector of line types. Default is \code{c(1, 3)}
+    Vector of line types. Default is 1 for the odds-ratio and 3 for the
+    confidence interval.
 }
   \item{col}{
     A vector of colours. Default is black

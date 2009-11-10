@@ -10,8 +10,8 @@
 cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
 }
 \arguments{
-  \item{formula}{A formula object that has a \code{Hist} object as the
-    left of the ~ operator, and if desired, terms separated by + on the
+  \item{formula}{A formula object that has a \code{Hist} object on the
+    left of a ~ operator, and if desired, terms separated by + on the
     right. Note that any subsetting, i.e., \code{data$var} or
     \code{data[, "var"]}, is invalid for this function.} 
   \item{data}{A data frame in which the variables in the formula can be
