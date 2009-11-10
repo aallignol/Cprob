@@ -1,10 +1,11 @@
+2009-11-10 Arthur Allignol <arthur.allignol@fdm.uni-freiburg.de>
+
+	
+
 2009-7-15 Arthur Allignol <arthur.allignol@fdm.uni-freiburg.de>
 
-* New lines and '[' methods for cpf objects
+	* New lines and '[' methods for cpf objects
 
-* plot.cpfpo replaced by xyplot.cpfpo
+	* plot.cpfpo replaced by xyplot.cpfpo
 
-* New functions pseudocpf and associated methods to compute pseudo values
-
-* New argument ci.lty in plot.cpf to control
-the line type of the pointwise confidence intervals
+	* New functions pseudocpf and associated methods to compute pseudo values

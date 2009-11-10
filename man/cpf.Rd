@@ -58,6 +58,8 @@ cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
     elements of the \code{cp} etc. vectors corresponding to the first
     group, second, etc.}
   \item{X}{Gives covariate's name and labels}
+  \item{strata}{Gives the covariate labels that will be used by default
+  for plotting the conditional probability curves, for instance.}
   \item{call}{Call that produced the object}
   \item{z}{Test statististic}
   \item{p}{p value of the test}
