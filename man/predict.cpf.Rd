@@ -35,5 +35,5 @@ test <- cpf(Hist(time, ev)~A, data = mgus)
 
 predict(test, c(10, 20))
 }
-\keyword{methods}
+\keyword{survival}
 

@@ -10,8 +10,8 @@
 }
 \usage{
 \S3method{xyplot}{cpfpo}(x, data = NULL, conf.int = TRUE, level = 0.95,
-odds = TRUE, intercept = TRUE, ylab, xlab, lty = c(1, 3, 3),
-col = c(1, 1, 1), ...)
+       odds = TRUE, intercept = TRUE, ylab, xlab, lty = c(1, 3, 3),
+       col = c(1, 1, 1), ...)
 }
 \arguments{
   \item{x}{
@@ -62,3 +62,4 @@ col = c(1, 1, 1), ...)
   \code{\link{cpfpo}}, \code{\link[lattice]{xyplot}}
 }
 \keyword{hplot}
+\keyword{survival}

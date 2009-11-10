@@ -17,11 +17,11 @@ failcode = 1, ...)
     operator and the response, a \code{Hist} object, on the left}
   \item{data}{A data frame in which to interpret the formula}
   \item{id}{Individual patient id}
-  \item{subset}{expression specifying that only a subset of the data set
+  \item{subset}{Expression specifying that only a subset of the data set
     should be used}
   \item{na.action}{A missing data filter funtion applied to the
     model.frame, after any subset argument has been used. Default is
-    options()$na.action}
+    \code{options()$na.action}}
   \item{timepoints}{Time points at which to compute the pseudo values}
   \item{failcode}{Integer that specifies which event is of interest}
   \item{\dots}{Other arguments for the \code{\link[geepack]{geese}}

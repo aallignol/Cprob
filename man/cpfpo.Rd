@@ -13,11 +13,11 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
     operator, is a \code{Hist} object, and the terms on the right of ~.}
   \item{data}{A data.frame in which to interpret the variables names in
     the formula and subset}
-  \item{subset}{expression specifying that only a subset of the data set
+  \item{subset}{Expression specifying that only a subset of the data set
     should be used}
   \item{na.action}{A missing data filter funtion applied to the
     model.frame, after any subset argument has been used. Default is
-    \code{options()$na.action.}}
+    \code{options()$na.action}}
   \item{failcode}{Integer specifying the code for the event of interest}
   \item{tis}{Vector of timepoints on which the model is fitted}
   \item{w}{Vector of weights. Should be of the same length as
@@ -26,12 +26,12 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
 }
 \details{
   The conditional probability function of a competing event is the
-  probability of failing due to one risk (the event of interest) given
+  probability of having failed due to one risk (the event of interest) given
   that no other failure has previously occurred.
 
   The \code{cpfpo} function fits a proportional-odds model for the
   conditional probability function within the Temporal Process
-  Regression Framework, which is a marginal mean model, where the mean
+  Regression framework, which is a marginal mean model, where the mean
   of a response \eqn{Y(t)}{Y(t)} at time \eqn{t}{t} is specified
   conditionally on a vector of covariates \eqn{Z}{Z} and a
   time-dependent stratification factor \eqn{S(t)}{S(t)}

@@ -36,5 +36,5 @@
 \seealso{
   \code{\link{pseudocpf}}
 }
-\keyword{methods}
+\keyword{survival}
 \keyword{print}

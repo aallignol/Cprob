@@ -27,6 +27,6 @@
 }
 \author{arthur allignol, \email{arthur.allignol@fdm.uni-freiburg.de}}
 \seealso{\code{\link{cpf}}}
-\keyword{methods}
+\keyword{survival}
 \keyword{print}
 

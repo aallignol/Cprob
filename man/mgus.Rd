@@ -8,14 +8,14 @@ Monoclonal Gammopathy of Undetermined Significance
 \description{
   All 241 patients diagnosed with monoclonal gammopathy of undetermined
   significance at the Mayo Clinic before Jan. 1, 1971, and followed
-  forward through 1992. The interest lies in the possible transformation
+  forward until 1992. The interest lies in the possible transformation
   of mgus towards a cancer of the plasma cells, death from other causes
-  acting as competing risks.
+  acting as a competing risk.
 
 }
 \usage{data(mgus)}
 \format{
-  A data frame with 241 observations on the following 10 variables.
+  A data frame with 241 observations and the following 10 variables.
   \describe{
     \item{\code{id}}{Patient identification number}
     \item{\code{time}}{Event time}
@@ -35,3 +35,4 @@ Monoclonal Gammopathy of Undetermined Significance
   }
 \examples{data(mgus)}
 \keyword{datasets}
+\keyword{survival}

@@ -32,7 +32,7 @@ cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
   no other event has previously occurred (Pepe, 1993).
 
   The \code{cpf} function aims at estimating this quantity along with
-  its variance at each event timepoints. It also computes a test of
+  its variance at each event times. It also computes a test of
   equality of conditional probability curves in two samples (and
   \emph{only} in two samples).
 
@@ -49,21 +49,19 @@ cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
     curve}
   \item{upper}{Upper confidence limit for the conditional probability
     curve}
-  \item{n.risk}{Number of individuals at risk just before t}
-  \item{n.event}{A matrix giving the number of event of interest at
-    time t in the first column, and the number of competing events at time
-    t in the second column}
-  \item{n.lost}{Number of censored observations at time t.}
-  \item{size.strata}{If there are several groups, gives the number of
-    elements of the \code{cp} etc. vectors corresponding to the first
-    group, second, etc.}
+  \item{n.risk}{Number of individuals at risk just before \eqn{t}{t}}
+  \item{n.event}{A matrix giving the number of events of interest at
+    time \eqn{t}{t} in the first column, and the number of competing events at time
+    \eqn{t}{t} in the second column}
+  \item{n.lost}{Number of censored observations at time \eqn{t}{t}}
+  \item{size.strata}{Displays the size of each strata}
   \item{X}{Gives covariate's name and labels}
   \item{strata}{Gives the covariate labels that will be used by default
-  for plotting the conditional probability curves, for instance.}
+  for plotting the conditional probability curves, for example.}
   \item{call}{Call that produced the object}
   \item{z}{Test statististic}
   \item{p}{p value of the test}
-  \item{failcode}{Same as in the call}
+  \item{failcode}{Same as in function call}
 }
 \references{M.S. Pepe and M. Mori, Kaplan-Meier, marginal or conditional probability curves in
   summarizing competing risks failure time data? \emph{Statistics in
