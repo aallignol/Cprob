@@ -1,5 +1,5 @@
 
-R version 2.9.2 (2009-08-24)
+R version 2.10.0 (2009-10-26)
 Copyright (C) 2009 The R Foundation for Statistical Computing
 ISBN 3-900051-07-0
 
@@ -29,24 +29,6 @@ Loading required package: tpr
 Loading required package: lgtdl
 Loading required package: Matrix
 Loading required package: lattice
-
-Attaching package: 'Matrix'
-
-
-	The following object(s) are masked from package:stats :
-
-	 contr.helmert,
-	 contr.poly,
-	 contr.SAS,
-	 contr.sum,
-	 contr.treatment,
-	 xtabs 
-
-
-	The following object(s) are masked from package:base :
-
-	 rcond 
-
 Loading required package: geepack
 > 
 > ### test 1
@@ -81,6 +63,40 @@ Call: cpf(formula = Hist(time, ev) ~ 1, data = mgus)
 172 0.5499048
 230        NA
 
+> 
+> aa[]
+Call: cpf(formula = Hist(time, ev) ~ 1, data = mgus)
+
+Number of observations:  241 
+
+    Cause n.event
+        1      59
+    other     130
+ censored      52
+Warning message:
+In `[.cpf`(aa, ) : 'cpf' has only 1 conditional probability curve
+> 
+> all.equal(aa[]$cp, aa$cp)
+[1] TRUE
+Warning message:
+In `[.cpf`(aa, ) : 'cpf' has only 1 conditional probability curve
+> 
+> all.equal(aa[1]$cp, aa$cp)
+[1] TRUE
+Warning message:
+In `[.cpf`(aa, 1) : 'cpf' has only 1 conditional probability curve
+> 
+> aa[c(1, 2)]
+Call: cpf(formula = Hist(time, ev) ~ 1, data = mgus)
+
+Number of observations:  241 
+
+    Cause n.event
+        1      59
+    other     130
+ censored      52
+Warning message:
+In `[.cpf`(aa, c(1, 2)) : 'cpf' has only 1 conditional probability curve
 > 
 > ### test 2
 > mgus$A <- ifelse(mgus$age < 64, 0, 1)
@@ -140,6 +156,14 @@ Two sample test:
 115        Inf
 
 > 
+> all.equal(bb[]$cp, bb$cp)
+[1] TRUE
+> all.equal(bb[c(1, 2)]$cp, bb$cp)
+[1] TRUE
+> 
+> all.equal(bb[1]$cp, bb$cp[1:bb$size.strata[1]])
+[1] TRUE
+> 
 > ### test 3
 > fit <- cpfpo(Hist(time, ev) ~ age + creat, mgus,
 +              tis=seq(10, 30, 0.3), w=rep(1,67))
@@ -152,10 +176,10 @@ age          2.1493465 0.03160695
 creat        0.2566941 0.79741492
 
  Test for constant fit 
-                   coef   exp.coef    SE.coef       stat       pvalue
-(Intercept) -3.17296435 0.04187927 1.33248215 -5.4068039 6.415931e-08
-age          0.04224328 1.04314823 0.01965401  2.6020242 9.267531e-03
-creat        0.19314357 1.21305693 0.75242697 -0.3539132 7.234039e-01
+                   coef   exp.coef    SE.coef      stat       pvalue
+(Intercept) -3.17296435 0.04187927 1.33248215  3.726286 0.0001943217
+age          0.04224328 1.04314823 0.01965401 -1.815110 0.0695070043
+creat        0.19314357 1.21305693 0.75242697 -0.305947 0.7596449967
 > 
 > ### test 4
 > time <- c(rep(2, 20), rep(3, 60), rep(4, 20))
