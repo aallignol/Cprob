@@ -1,5 +1,6 @@
 pseudocpf <- function(formula, data, id, subset, na.action, timepoints, 
                       failcode = 1, ...) {
+                      
     call <- match.call()
     m <- match.call(expand = FALSE)
     temp <- c("", "formula", "data", "id", "subset", "na.action")
@@ -9,13 +10,14 @@ pseudocpf <- function(formula, data, id, subset, na.action, timepoints,
     m$formula <- Terms
     m[[1]] <- as.name("model.frame")
     m <- eval(m, parent.frame())
-    ##
+
     response <- model.extract(m, "response")
     if (!inherits(response, "Hist")) stop("Response must be a 'Hist' object")
     if (attr(response, "model") != "competing.risks")
         stop("This is not competing risk data")
     if (attr(response, "cens.type") != "rightCensored")
         stop("Works only for right-censored data")
+    
     event <- response[, "event"]
     time <- response[, "time"]
     states <- attr(response, "states")
@@ -35,6 +37,7 @@ pseudocpf <- function(formula, data, id, subset, na.action, timepoints,
                ncol = 1, nrow = nt)
     })
     temp <- do.call(rbind, temp)
+    
     psd[, 2] <- n * ref - (n - 1) * temp
     psd[, 1] <- as.vector(mapply(rep, id, nt))
     psd[, 3] <- rep(timepoints, n)
@@ -43,9 +46,11 @@ pseudocpf <- function(formula, data, id, subset, na.action, timepoints,
     cov <- model.matrix(Terms, m)[, -1, drop = FALSE]
     dat <- cbind(psd, matrix(mapply(rep, cov, nt), dim(psd)[1], dim(cov)[2]))
     names(dat)[4:dim(dat)[2]] <- colnames(cov)
+    
     newf <- update(formula, pseudo ~ factor(time) + .)
     fit <- geese(newf, id = id, data = dat, family = gaussian,
                  mean.link = "logit", ...)
+    
     zzz <- list(fit = fit, pseudo = psd, timepoints = timepoints, call = call)
     class(zzz) <- "pseudocpf"
     zzz
