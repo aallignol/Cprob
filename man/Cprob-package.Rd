@@ -7,8 +7,9 @@ Conditional probability function of a competing event
 }
 \description{
   Estimates the conditional probability function of a competing event,
-  and fits, using tpr or the pseudo-value approach, a proportional-odds
-  model.
+  and fits, using the temporal process regression or the pseudo-value
+  approach, a proportional-odds model to the conditional probability
+  function
 }
 \details{
 \tabular{ll}{
@@ -16,8 +17,6 @@ Package: \tab Cprob\cr
 Version: \tab 1.0\cr
 Depends: \tab prodlim, tpr, lattice, geepack\cr
 License: \tab GPL (>=2)\cr
-Packaged: \tab 2009-11-09 18:03:24 UTC; arthur\cr
-Built: \tab R 2.10.0; ; 2009-11-09 18:06:06 UTC; unix\cr
 }
 
 Index:

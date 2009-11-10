@@ -2,7 +2,7 @@ Package: Cprob
 Title: Conditional probability function of a competing event
 Version: 1.0
 Author: Arthur Allignol
-Description: Estimates the conditional probability function of a competing event, and fits, using tpr or the pseudo-value approach, a proportional-odds model. 
+Description: Estimates the conditional probability function of a competing event, and fits, using the temporal process regression or the pseudo-value approach, a proportional-odds model to the conditional probability function
 Maintainer: Arthur Allignol <arthur.allignol@fdm.uni-freiburg.de>
 Depends: prodlim, tpr, lattice, geepack
 License: GPL (>=2)
