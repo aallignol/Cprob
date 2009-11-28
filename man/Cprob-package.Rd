@@ -61,8 +61,12 @@ Maintainer: Arthur Allignol <arthur.allignol@fdm.uni-freiburg.de>
 
   J.P. Fine, J. Yan and M.R. Kosorok (2004). Temporal Process
   Regression, \emph{Biometrika}, 91(3):683-703.
+  
+  A. Allignol, A. Latouche, J. Yan and J.P. Fine, 
+  A Propotional-Odds Model for the Conditional
+  Probability Function of a Competing Risk. Submitted
 
-    P.K. Andersen, J.P. Klein and S. Rosthoj (2003). Generalised Linear Models
+  P.K. Andersen, J.P. Klein and S. Rosthoj (2003). Generalised Linear Models
   for Correlated Pseudo-Observations, with Applications to Multi-State
   Models. \emph{Biometrika}, 90, 15-27.
   

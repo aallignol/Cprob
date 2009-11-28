@@ -55,6 +55,10 @@ cpfpo(formula, data, subset, na.action, failcode, tis, w, ...)
   M.S. Pepe and M. Mori, Kaplan-Meier, marginal or conditional
   probability curves in summarizing competing risks failure time data?
   \emph{Statistics in Medicine}, 12(8):737--751.
+
+  A. Allignol, A. Latouche, J. Yan and J.P. Fine, 
+  A Propotional-Odds Model for the Conditional
+  Probability Function of a Competing Risk. Submitted
 }
 \author{Arthur Allignol, \email{arthur.allignol@fdm.uni-freiburg.de}}
 \note{

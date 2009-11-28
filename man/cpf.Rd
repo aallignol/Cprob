@@ -20,7 +20,7 @@ cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
     for conditional probability estimation.}
   \item{na.action}{A missing-data filter function, applied to the model
     frame, after any \code{subset} argument has been used. Default
-    option is \code{options()$na.action}}.
+    option is \code{options()$na.action}.}
     \item{conf.int}{Level for pointwise two-sided confidence
       intervals. Default is 0.95.}
   \item{failcode}{Failure code of the event of interest. Default is the
@@ -63,9 +63,15 @@ cpf(formula, data, subset, na.action, conf.int = 0.95, failcode)
   \item{p}{p value of the test}
   \item{failcode}{Same as in function call}
 }
-\references{M.S. Pepe and M. Mori, Kaplan-Meier, marginal or conditional probability curves in
+\references{
+  M.S. Pepe and M. Mori, Kaplan-Meier, marginal or conditional probability curves in
   summarizing competing risks failure time data? \emph{Statistics in
-    Medicine}, 12(8):737--751.}
+    Medicine}, 12(8):737--751.
+  
+  A. Allignol, A. Latouche, J. Yan and J.P. Fine, 
+  A Propotional-Odds Model for the Conditional
+  Probability Function of a Competing Risk. Submitted
+}
 \author{Arthur Allignol, \email{arthur.allignol@fdm.uni-freiburg.de}}
 
 \seealso{\code{\link[prodlim]{Hist}}, \code{\link{print.cpf}},
