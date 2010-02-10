@@ -22,7 +22,7 @@ pseudocpf <- function(formula, data, id, subset, na.action, timepoints,
     time <- response[, "time"]
     states <- attr(response, "states")
     id <- model.extract(m, "id")
-    event <- factor(event, order = TRUE)
+    event <- factor(event)
     cc <- attr(response, "cens.code")
     levels(event) <- c(cc, states)
     daten <- data.frame(id, event, time)
