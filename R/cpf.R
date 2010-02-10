@@ -64,8 +64,6 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
         var.cp <- do.call(c, var.cp)
     }
 
-##    return(list(cp, var.cp))
-    
     level <- 1 - conf.int
     upper <- cp + qnorm(1 - level/2) * sqrt(var.cp)
     lower <- cp - qnorm(1 - level/2) * sqrt(var.cp)
