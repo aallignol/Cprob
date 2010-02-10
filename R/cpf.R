@@ -38,8 +38,8 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
         cif.other <- fit$cuminc[[-ind]]
         n.event.other <- fit$n.event[[-ind]]
     }
-    ## n.event <- data.frame(fit$n.event[, ind], n.event.other)
-    ## names(n.event) <- c(as.name(failcode), "other")
+    n.event <- data.frame(fit$n.event[[ind]], n.event.other)
+    names(n.event) <- c(as.name(failcode), "other")
     cp <- fit$cuminc[[ind]] / (1 - cif.other)
     
 ### Variance computation
@@ -64,7 +64,7 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
         var.cp <- do.call(c, var.cp)
     }
 
-    return(list(cp, var.cp))
+##    return(list(cp, var.cp))
     
     level <- 1 - conf.int
     upper <- cp + qnorm(1 - level/2) * sqrt(var.cp)
@@ -100,12 +100,12 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
         ## test's variance
         t.surv <- c(ifelse(ind.time1 == 0, 1, fit$surv[ind.G1][ind.time1]),
                     ifelse(ind.time2 == 0, 1, fit$surv[ind.G2][ind.time2]))
-        t.cif <- c(ifelse(ind.time1 == 0, 0, fit$cuminc[ind.G1, ind][ind.time1]),
-                   ifelse(ind.time2 == 0, 0, fit$cuminc[ind.G2, ind][ind.time2]))
+        t.cif <- c(ifelse(ind.time1 == 0, 0, fit$cuminc[[ind]][ind.G1][ind.time1]),
+                   ifelse(ind.time2 == 0, 0, fit$cuminc[[ind]][ind.G2][ind.time2]))
         t.cif.other <- c(ifelse(ind.time1 == 0, 0, cif.other[ind.G1][ind.time1]),
                          ifelse(ind.time2 == 0, 0, cif.other[ind.G2][ind.time2]))
-        t.n.event <- c(ifelse(ind.time1 == 0, 0, fit$n.event[ind.G1, ind][ind.time1]),
-                       ifelse(ind.time2 == 0, 0, fit$n.event[ind.G2, ind][ind.time2]))
+        t.n.event <- c(ifelse(ind.time1 == 0, 0, fit$n.event[[ind]][ind.G1][ind.time1]),
+                       ifelse(ind.time2 == 0, 0, fit$n.event[[ind]][ind.G2][ind.time2]))
         t.n.event.other <- c(ifelse(ind.time1 == 0, 0, n.event.other[ind.G1][ind.time1]),
                              ifelse(ind.time2 == 0, 0, n.event.other[ind.G2][ind.time2]))
         t.n.risk <- c(ifelse(ind.time1 == 0, n.group[1], fit$n.risk[ind.G1][ind.time1]),
