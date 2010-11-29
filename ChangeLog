@@ -2,6 +2,7 @@
 
 	* New version number 1.2
 	* NAMESPACE: Bug fix
+	* pseudocpf: explicit call to geepack::geese
 
 2010-02-11 Arthur Allignol <arthur.allignol@fdm.uni-freiburg.de>
 
