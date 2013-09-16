@@ -1,5 +1,5 @@
-import(lattice, tpr)
-importFrom(prodlim, prodlim, Hist)
+import(lattice, tpr, geepack, lgtdl, prodlim)
+## importFrom(prodlim, prodlim, Hist)
 export(cpf, cpfpo, summary.cpf, pseudocpf, summary.pseudocpf)
 S3method(print, cpf)
 S3method(summary, cpf)
