@@ -4,6 +4,6 @@ Version: 1.2.2
 Author: Arthur Allignol
 Description: Estimates the conditional probability function of a competing event, and fits, using the temporal process regression or the pseudo-value approach, a proportional-odds model to the conditional probability function
 Maintainer: Arthur Allignol <arthur.allignol@uni-ulm.de>
-Depends: prodlim,lattice
-Imports: tpr, geepack, lgtdl
+Depends: prodlim
+Imports: tpr, geepack, lgtdl, lattice
 License: GPL (>=2)
