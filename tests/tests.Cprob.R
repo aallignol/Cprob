@@ -12,14 +12,6 @@ aa
 
 summary(aa)
 
-aa[]
-
-all.equal(aa[]$cp, aa$cp)
-
-all.equal(aa[1]$cp, aa$cp)
-
-aa[c(1, 2)]
-
 ### test 2
 mgus$A <- ifelse(mgus$age < 64, 0, 1)
 
