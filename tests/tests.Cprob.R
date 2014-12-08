@@ -64,8 +64,8 @@ test1 <- pseudocpf(Hist(time, ev, cens.code = "4") ~ age + creat, mm, id = id, t
 test2 <- cpfpo(Hist(time, ev, cens.code = "4") ~ age + creat, mm,
                tis=seq(10, 30, 0.3), w=rep(1,67))
 
-test2$alpha == fit$alpha
+all(test2$alpha == fit$alpha)
 
-summary(test1)$coef == summary(fit1)$coef
+all(summary(test1)$coef == summary(fit1)$coef)
 
 options(op)
