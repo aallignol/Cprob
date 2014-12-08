@@ -1,5 +1,8 @@
 require(Cprob)
 
+op <- options()
+options(warn = 1)
+
 ### test 1
 data(mgus, package = "Cprob")
 
@@ -57,9 +60,9 @@ fit2
 
 summary(fit1)
 summary(fit2)
-       
 
-### test 6: playing with cens.conde
+
+### test 6: playing with cens.code
 mm <- mgus
 mm$ev <- ifelse(mm$ev == 0, 4, mm$ev)
 
@@ -72,3 +75,5 @@ test2 <- cpfpo(Hist(time, ev, cens.code = "4") ~ age + creat, mm,
 test2$alpha == fit$alpha
 
 summary(test1)$coef == summary(fit1)$coef
+
+options(op)
