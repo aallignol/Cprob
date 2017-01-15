@@ -1,4 +1,10 @@
 cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
+
+    if(!requireNamespace("prodlim", quietly = TRUE))
+        stop("'mvna' requires prodlim package to be installed")
+
+    prodlim <- prodlim::prodlim
+    Hist <- prodlim::Hist
     
     call <- match.call()
     if ((mode(call[[2]]) == "call" && call[[2]][[1]] == as.name("Hist")) ||
@@ -11,7 +17,7 @@ cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
     m$formula <- formula
     m$failcode <- NULL
     m[[1]] <- as.name("prodlim")
-    fit <- eval(m, parent.frame())
+    fit <- eval.parent(m)
     if (attr(fit$model.response, "model") != "competing.risks")
         stop("This is not competing risks data")
     if (attr(fit$model.response, "cens.type") != "rightCensored")
