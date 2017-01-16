@@ -1,10 +1,4 @@
 cpf <- function(formula, data, subset, na.action, conf.int = 0.95, failcode) {
-
-    if(!requireNamespace("prodlim", quietly = TRUE))
-        stop("'mvna' requires prodlim package to be installed")
-
-    prodlim <- prodlim::prodlim
-    Hist <- prodlim::Hist
     
     call <- match.call()
     if ((mode(call[[2]]) == "call" && call[[2]][[1]] == as.name("Hist")) ||
