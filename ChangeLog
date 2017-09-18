@@ -1,5 +1,11 @@
 2017-1-16 Arthur Allignol <arthur.allignol@gmail.com>
 
+	* Version number to 1.4
+	* email address change
+
+
+2017-1-16 Arthur Allignol <arthur.allignol@gmail.com>
+
 	* Remove 2 sample tests from cpf. Use the regression functions if you need to compare groups
 	* import stats and graphs
 
